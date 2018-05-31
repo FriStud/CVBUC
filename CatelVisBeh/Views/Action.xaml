@@ -1,0 +1,28 @@
+﻿<catel:UserControl x:Class="CatelVisBeh.Views.Action"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:catel="http://schemas.catelproject.com">
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Height="50" Width="50" Command="{Binding Path=LogIn}">L-O-G-I-N</Button>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+            <Button Command="{Binding Path=ChangeUserRole }">CHANGE ROLE</Button>
+            
+            <ComboBox x:Name="SelOpt" Grid.Column="1" Grid.Row="1"
+                      ItemsSource="{Binding Path=Model.AllRoles}"
+                      SelectedValue="{Binding Path=Model.SelectedRole}"/>
+        </StackPanel>
+        
+        
+    </Grid>
+
+</catel:UserControl>

@@ -1,0 +1,43 @@
+﻿<catel:Window x:Class="CatelVisBeh.Views.MainWindow"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:catel="http://schemas.catelproject.com"
+              xmlns:local="clr-namespace:CatelVisBeh.Views"
+              xmlns:beh="clr-namespace:CatelVisBeh.Behavior"
+              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+              ResizeMode="CanResize">
+    
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <local:Action/>
+        </Grid>
+
+        <TabControl Grid.Row="1">
+
+            <TabItem Header="First Look">
+                <local:FirstLookk>
+                    <i:Interaction.Behaviors>
+                        <beh:ControlBehavior VisibilityAction="Collapsed" AccessLevel="admin"/>
+                    </i:Interaction.Behaviors>
+                </local:FirstLookk>
+            </TabItem>
+
+            <TabItem Header="Second Look">
+                <local:SecondLook>
+                    <i:Interaction.Behaviors>
+                        <beh:ControlBehavior VisibilityAction="Collapsed" AccessLevel="only Devil Moir"/>
+                    </i:Interaction.Behaviors>
+                </local:SecondLook>
+            </TabItem>
+
+        </TabControl>
+
+    </Grid>
+
+</catel:Window>
